@@ -1,0 +1,11 @@
+.inputfield{
+    padding: 10px;
+    width: 40%;
+    margin-right: 10%;
+}
+.continuebutton{border-radius: 5px;
+    
+    float: right;
+    margin-right: 360px;
+    width: 119px;
+}

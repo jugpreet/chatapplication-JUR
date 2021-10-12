@@ -1,0 +1,28 @@
+.chatroom{
+    display: flex;
+    margin-left: 10%;
+    padding: 10px;
+    align-items: center;
+}
+
+.footerchatroom{
+    display: flex;
+    margin-left: 12%;
+}
+.sending{
+    display: flex;
+    margin-left: 15%;
+}
+
+.title{
+    display: flex;
+    margin-left: 12%;
+}
+.messages{
+    height: 75vh;
+    overflow: auto;
+    
+}
+.inputfieldbutton{
+    border-radius: 10px;
+}
