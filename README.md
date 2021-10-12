@@ -21,7 +21,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. Clone the project and install the dependencies:
 
-   > \$ git clone https://github.com/jugpreet/chat-application-JUR-assignment.git
+   > \$ git clone https://github.com/jugpreet/chatapplication-JUR
 
    > \$ cd chatapp
 
