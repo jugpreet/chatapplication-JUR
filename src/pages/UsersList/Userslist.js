@@ -36,7 +36,7 @@ const UserList = () => {
         history.push(routes.active.path)
     }
     return <div><h1>Let us know who you are</h1>
-        <RenderList dataArr={users} handleClick={handleUsers} />
+        <RenderList dataArr={users} handleClick={handleUsers} page='userlist' />
 
         {active && <Button className='continuebutton' onClick={redirectOnCLick}>Continue</Button>}
 

@@ -9,19 +9,19 @@ import './ChatRoom.css'
 const ChatRoom = () => {
     const messages = JSON.parse(localStorage.getItem('messages'));
     const [message, setMessageText] = useState('')
-    const [messageList, setMessageList] = useState(messages||[])
+    const [messageList, setMessageList] = useState(messages || [])
     const [sent, setSent] = useState(false)
     //const selectedUsers = useSelector(state => state.data?.SelectedUsers)
     const userInfo = useSelector((state) => state?.data)
     const title = useSelector((state) => state?.data?.Title)
     const convId = useSelector((state) => state?.data?.Messages)
     localStorage.setItem('messages', JSON.stringify(messageList))
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         setConv()
-        return()=>{localStorage.clear()}
+        return () => { localStorage.clear() }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+    }, [])
     const setConv = async () => {
         const res = await getALLMessages(convId)
         setMessageList(res);
@@ -31,17 +31,18 @@ const ChatRoom = () => {
         setMessageText(e.target.value)
     }
     const handleSendMessage = async () => {
-        
-        if(message.length){
+
+        if (message.length) {
             setSent(true)
-        await setMessages(userInfo?.userID, message).then((res) => {
-            setSent(false)
-            setMessageList((prev) => [...prev, res])
-        })}
+            await setMessages(userInfo?.userID, message).then((res) => {
+                setSent(false)
+                setMessageList((prev) => [...prev, res])
+            })
+        }
 
         setMessageText('')
     }
-    
+    console.log(messageList.length);
     return <div>
         <h1 className='title'>{title}</h1>
         < ul className='messages'>
@@ -54,7 +55,7 @@ const ChatRoom = () => {
                 })}
             </>}
         </ul>
-        {sent && messageList.length>0 ? <p className='sending'>Sending...</p> : <p className='sending'>Sent</p>}
+        {messageList.length > 0 && <> {sent ? <p className='sending'>Sending...</p> : <p className='sending'>Sent</p>}</>}
         <div className='footerchatroom'>
 
             <Input className='inputfield' placeholder="Send Something..." onChange={(e) => handleSetMessage(e)} value={message} />

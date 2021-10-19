@@ -1,20 +1,26 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Button, Input } from 'antd';
+import { Button, Input  } from 'antd';
 import { routes } from "../../Config/routes";
 import { useHistory } from 'react-router-dom';
 import { setConvTitle } from "../../Services/action";
 import RenderList from "../../Components/RenderList";
+import { openNotification } from "../../Utils/Notifocations";
 import './StartConversation.css'
 const StartConversation = () => {
     const dispatch = useDispatch()
     const history = useHistory()
     const [title, setTitle] = useState('')
     const selectedUsers = useSelector(state => state.data?.SelectedUsers)
-
+    const userInfo = useSelector((state) => state?.data)
+    
     const startConversationCall = async () => {
-        dispatch(setConvTitle(title))
-        history.push(routes.chatRoom.path)
+       if(title?.length){     dispatch(setConvTitle(title))
+            history.push(routes.chatRoom.path)}
+            else{
+                const text='Enter title to start conversation'
+                openNotification(text)
+            }
 
     }
 
@@ -22,15 +28,16 @@ const StartConversation = () => {
         setTitle(e.target.value)
     }
     return <div>
-        <h1>Give title to start conversation with {selectedUsers?.length} participants</h1>
+        <h1>Welcome {userInfo?.userName}</h1>
+        <h3>Give title to start conversation with {selectedUsers?.length} participants</h3>
         <div className='startConv'>
-            <RenderList dataArr={selectedUsers} page='startcon'/>
+            <RenderList dataArr={selectedUsers} page='startcon' />
         </div>
+        <div className='startConvFooter'>
+        <Input placeholder="Please enter title here..." className='inputfieldstartconv' onChange={(e) => handleTitleChange(e)} />
 
-        <Input placeholder="Basic usage" className='inputfieldstartconv' onChange={(e) => handleTitleChange(e)} />
-        {
-            title && <Button className='startConButton' onClick={() => startConversationCall()}>Start Conversation</Button>
-        }
+        <Button className='startConButton' onClick={() => startConversationCall()}>Start Conversation</Button>
+        </div>
     </div>
 }
 export default StartConversation

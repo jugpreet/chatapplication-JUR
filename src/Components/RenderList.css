@@ -12,13 +12,17 @@
 .renderList{
     display: flex;
     align-items: center;
+    padding-left: 2%;
+    padding-right: 2%;
 }
-#avatar:visited{
-    color: blueviolet
-}
-
 .avatar{
     border-radius: 40px;
+    
+}
+.selected {
+    background-color: cadetblue;
+    cursor: pointer;
+    color: black;
 }
 
 .main-selectedusers{
@@ -26,4 +30,5 @@
     flex-direction: row;
     justify-content: space-between;
     height: 24vh;
+    
 }

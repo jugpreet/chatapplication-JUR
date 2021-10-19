@@ -73,7 +73,7 @@ const ActiveUser = () => {
     return <div>
         {
             activeconversations.length ? < > <h1>Your Conversations</h1>
-                <RenderList dataArr={activeconversations} handleClick={getMessagesOfConversation} />
+                <RenderList dataArr={activeconversations} handleClick={getMessagesOfConversation} page='youconversations'/>
                 <Button className='createConv' onClick={()=>handleSeeMessages()} >Create New Conversation</Button>
             </> :
                 <SelectUsersForConv />
