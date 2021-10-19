@@ -7,11 +7,12 @@ import {
 } from "react-router-dom";
 import { renderRoutes } from "./Config/routes";
 import { Suspense } from "react";
+import { Spin, Space } from 'antd';
 function App() {
   
   return (
     <div className="App">
-    <Suspense fallback={"...loading"}>
+    <Suspense fallback={<Spin size="large" className='spinner' />}>
     <BrowserRouter>
           <Switch>
             {renderRoutes.map(([key, route]) =>

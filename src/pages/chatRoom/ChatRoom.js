@@ -6,6 +6,7 @@ import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import '../../comman.css'
 import './ChatRoom.css'
+import { openNotification } from '../../Utils/Notifocations';
 const ChatRoom = () => {
     const messages = JSON.parse(localStorage.getItem('messages'));
     const [message, setMessageText] = useState('')
@@ -38,6 +39,10 @@ const ChatRoom = () => {
                 setSent(false)
                 setMessageList((prev) => [...prev, res])
             })
+        }
+        else{
+            const message='Please type some message'
+            openNotification(message)
         }
 
         setMessageText('')
