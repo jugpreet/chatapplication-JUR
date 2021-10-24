@@ -13,7 +13,12 @@
     display: flex;
     margin-left: 15%;
 }
-
+.emojipicker{
+    margin-left: 50%;
+}
+.emoji{
+    
+}
 .title{
     display: flex;
     margin-left: 12%;

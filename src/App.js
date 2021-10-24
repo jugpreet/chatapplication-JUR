@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { renderRoutes } from "./Config/routes";
 import { Suspense } from "react";
-import { Spin, Space } from 'antd';
+import { Spin } from 'antd';
 function App() {
   
   return (

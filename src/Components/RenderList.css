@@ -11,9 +11,9 @@
 }
 .renderList{
     display: flex;
-    align-items: center;
-    padding-left: 2%;
-    padding-right: 2%;
+    width: 170px;
+    justify-content: space-evenly;
+    overflow: auto;
 }
 .avatar{
     border-radius: 40px;
