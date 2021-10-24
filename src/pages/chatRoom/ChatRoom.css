@@ -15,9 +15,17 @@
 }
 .emojipicker{
     margin-left: 50%;
+    position: absolute;
+    top: 202px;
+
 }
 .emoji{
+    margin-right: 5%;
     
+}
+.inputfieldchat{
+    padding: 10px;
+    width: 40%;
 }
 .title{
     display: flex;

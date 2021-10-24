@@ -73,7 +73,7 @@ const ChatRoom = () => {
         {messageList.length > 0 && <> {sent ? <p className='sending'>Sending...</p> : <p className='sending'>Sent</p>}</>}
         
         <div className='footerchatroom'>
-            <Input placeholder="Send Something..." className='inputfield' onChange={(e) => handleSetMessage(e)} value={message} />
+            <Input placeholder="Send Something..." className='inputfieldchat' onChange={(e) => handleSetMessage(e)} value={message} />
             <SmileOutlined  className='emoji' onClick={() => setOpenEmojiPicker(!openEmojiPicker)} />
             <Button className='inputfieldbutton' onClick={() => handleSendMessage()}>Send</Button>
         </div>

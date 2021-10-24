@@ -12,7 +12,6 @@
 .renderList{
     display: flex;
     width: 170px;
-    justify-content: space-evenly;
     overflow: auto;
 }
 .avatar{
