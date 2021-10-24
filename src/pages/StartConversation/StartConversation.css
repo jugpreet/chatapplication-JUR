@@ -1,0 +1,13 @@
+.inputfieldstartconv{
+    width: 23%;
+    padding: 7px;
+    margin-right: 10%;
+}
+.startConButton{
+    border-radius: 6px;
+    padding: 8px;
+}
+.startConvFooter{
+    display: flex;
+    justify-content: center;
+}

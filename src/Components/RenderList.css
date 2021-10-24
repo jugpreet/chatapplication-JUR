@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80vh;
+}
+.renderList{
+    display: flex;
+    width: 170px;
+    overflow: auto;
+}
+.avatar{
+    border-radius: 40px;
+    
+}
+.selected {
+    background-color: cadetblue;
+    cursor: pointer;
+    color: black;
+}
+
+.main-selectedusers{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 24vh;
+    
+}
